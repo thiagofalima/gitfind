@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header";
 import background from "../../assets/background.svg";
 import styled from "styled-components";
+import { GlobalStyle } from "../../GlobalStyles";
 
 const Wrapper = styled.div`
   position: relative;
@@ -25,6 +26,7 @@ const Wrapper = styled.div`
 function App() {
   return (
     <>
+    <GlobalStyle />
       <Header />
       <Wrapper className="conteudo">
         <img

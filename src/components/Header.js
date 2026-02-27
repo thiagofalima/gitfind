@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
     justify-content: center;
 
     h1 {
-        font-family: 'Inter', 'Roboto', 'Arial';
         font-size: 1.5em;
         color: #FFFFFF;
     }
