@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header";
+import { Input } from "../../components/Input";
 import background from "../../assets/background.svg";
 import styled from "styled-components";
 import { GlobalStyle } from "../../GlobalStyles";
@@ -26,7 +27,7 @@ const Wrapper = styled.div`
 function App() {
   return (
     <>
-    <GlobalStyle />
+      <GlobalStyle />
       <Header />
       <Wrapper className="conteudo">
         <img
@@ -34,7 +35,9 @@ function App() {
           className="background"
           alt="background with Github logo icon."
         />
-        <div className="informacoes">Teste</div>
+        <div className="informacoes">
+          <Input />
+        </div>
       </Wrapper>
     </>
   );
