@@ -1,5 +1,6 @@
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 import background from "../../assets/background.svg";
 import styled from "styled-components";
 import { GlobalStyle } from "../../GlobalStyles";
@@ -36,7 +37,10 @@ function App() {
           alt="background with Github logo icon."
         />
         <div className="informacoes">
-          <Input />
+          <div>
+            <Input />
+            <Button />
+          </div>
         </div>
       </Wrapper>
     </>
