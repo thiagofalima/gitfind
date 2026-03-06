@@ -40,7 +40,7 @@ function App() {
         <div className="informacoes">
           <div>
             <Input type="text" placeholder="@usuario"/>
-            <Button />
+            <Button>Buscar</Button>
           </div>
           <div className="profile">
             <img src="https://avatars.githubusercontent.com/u/137067860?v=4"
