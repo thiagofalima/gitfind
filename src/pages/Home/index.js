@@ -4,6 +4,7 @@ import { Button } from "../../components/Button";
 import background from "../../assets/background.svg";
 import styled from "styled-components";
 import { GlobalStyle } from "../../GlobalStyles";
+import { ListItem } from "../../components/ListItem";
 
 const Wrapper = styled.div`
   position: relative;
@@ -85,6 +86,10 @@ function App() {
             </div>
           </div>
           <hr />
+          <div className="repositories">
+            <h3>Repositórios</h3>
+            <ListItem title="Teste 1" description="Teste descrição"/>
+          </div>
         </div>
       </Wrapper>
     </>
