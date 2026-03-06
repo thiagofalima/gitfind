@@ -24,11 +24,6 @@ const Wrapper = styled.div`
     color: #ffffff;
   }
 
-  .informacoes div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
 `;
 
 function App() {
@@ -44,10 +39,18 @@ function App() {
         />
         <div className="informacoes">
           <div>
-            <Input />
+            <Input type="text" placeholder="@usuario"/>
             <Button />
           </div>
-          <img />
+          <div className="profile">
+            <img src="https://avatars.githubusercontent.com/u/137067860?v=4"
+            className="profile"
+            alt="foto de perfil do Thiago"/>
+            <div>
+              <h3>Thiago Lima</h3>
+              <p>Desenvolvedor Full Stack</p>
+            </div>
+          </div>
         </div>
       </Wrapper>
     </>

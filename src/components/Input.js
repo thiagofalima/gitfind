@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-const InputWrapper = styled.div`
-    input {
+export const Input = styled.input` 
         min-width: 250px;
         margin-right: 12px;
         width: 80%;
@@ -10,13 +9,4 @@ const InputWrapper = styled.div`
         background: transparent;
         font-size: 18px;
         padding: 10px;
-    }
 `
-
-export const Input = () => {
-    return (
-        <InputWrapper>
-            <input name="usuario" placeholder="@username"/>
-        </InputWrapper>
-    )
-}
