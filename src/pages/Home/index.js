@@ -24,6 +24,16 @@ const Wrapper = styled.div`
     color: #ffffff;
   }
 
+  .profile {
+    display: flex;
+    margin: 20px 0;
+  }
+
+  .profile__image {
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid #e5e5e5;
+  }
 `;
 
 function App() {
@@ -39,13 +49,15 @@ function App() {
         />
         <div className="informacoes">
           <div>
-            <Input type="text" placeholder="@usuario"/>
+            <Input type="text" placeholder="@usuario" />
             <Button>Buscar</Button>
           </div>
           <div className="profile">
-            <img src="https://avatars.githubusercontent.com/u/137067860?v=4"
-            className="profile"
-            alt="foto de perfil do Thiago"/>
+            <img
+              src="https://avatars.githubusercontent.com/u/137067860?v=4"
+              className="profile__image"
+              alt="foto de perfil do Thiago"
+            />
             <div>
               <h3>Thiago Lima</h3>
               <p>Desenvolvedor Full Stack</p>
