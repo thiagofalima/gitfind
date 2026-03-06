@@ -23,6 +23,12 @@ const Wrapper = styled.div`
     margin-top: 40px;
     color: #ffffff;
   }
+
+  .informacoes div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 function App() {
@@ -41,6 +47,7 @@ function App() {
             <Input />
             <Button />
           </div>
+          <img />
         </div>
       </Wrapper>
     </>
