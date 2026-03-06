@@ -26,13 +26,33 @@ const Wrapper = styled.div`
 
   .profile {
     display: flex;
-    margin: 20px 0;
+    margin: 40px 0;
   }
 
   .profile__image {
     width: 120px;
+    margin-right: 2em;
     border-radius: 50%;
     border: 2px solid #e5e5e5;
+  }
+
+  .profile__name,
+  .profile__description,
+  .profile__username {
+    color: #999999;
+    margin: 0;
+  }
+
+  .profile__name {
+    font-size: 1.5em;
+  }
+
+  .profile__description {
+    margin-top: 1.25em;
+  }
+
+  .profile__username {
+    font-size: 0.825em;
   }
 `;
 
@@ -59,10 +79,12 @@ function App() {
               alt="foto de perfil do Thiago"
             />
             <div>
-              <h3>Thiago Lima</h3>
-              <p>Desenvolvedor Full Stack</p>
+              <h3 className="profile__name">Thiago Lima</h3>
+              <span className="profile__username">@thiagofalima</span>
+              <p className="profile__description">Desenvolvedor Full Stack</p>
             </div>
           </div>
+          <hr />
         </div>
       </Wrapper>
     </>
