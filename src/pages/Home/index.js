@@ -127,10 +127,14 @@ function App() {
               <hr />
             </>
           ) : null}
-          <div className="repositories">
-            <h3>Repositórios</h3>
-            <ListItem title="Teste 1" description="Teste descrição" />
-          </div>
+          {repos?.length ? (
+            <>
+              <div className="repositories">
+                <h3>Repositórios</h3>
+                <ListItem title="Teste 1" description="Teste descrição" />
+              </div>
+            </>
+          ) : null}
         </div>
       </Wrapper>
     </>
