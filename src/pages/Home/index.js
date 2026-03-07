@@ -67,7 +67,11 @@ const Wrapper = styled.div`
 
 function App() {
 
-  const [user, setUser] = useState(" ")
+  const [user, setUser] = useState("")
+  const [currentUser, setCurrentUser] = useState(null)
+  const [repos, setRepos] = useState(null)
+
+  
 
   return (
     <>
