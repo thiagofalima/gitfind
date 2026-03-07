@@ -9,4 +9,5 @@ export const Input = styled.input`
         background: transparent;
         font-size: 18px;
         padding: 10px;
+        color: #FFFFFF;
 `
