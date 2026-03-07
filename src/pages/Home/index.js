@@ -5,6 +5,7 @@ import background from "../../assets/background.svg";
 import styled from "styled-components";
 import { GlobalStyle } from "../../GlobalStyles";
 import { ListItem } from "../../components/ListItem";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   position: relative;
@@ -55,9 +56,19 @@ const Wrapper = styled.div`
   .profile__username {
     font-size: 0.825em;
   }
+
+  .repositories h3 {
+    font-size: 2em;
+    color: #FFFFFF;
+    margin: .75em 0;
+    text-align: center;
+  }
 `;
 
 function App() {
+
+  const [user, setUser] = useState(" ")
+
   return (
     <>
       <GlobalStyle />
@@ -70,7 +81,8 @@ function App() {
         />
         <div className="informacoes">
           <div>
-            <Input type="text" placeholder="@usuario" />
+            <Input type="text" placeholder="@usuario" 
+            onChange={e => setUser(e.target.value)}/>
             <Button>Buscar</Button>
           </div>
           <div className="profile">

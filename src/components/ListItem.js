@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ListItemWrapper = styled.div`
-  margin-top: 1.5em;
+  margin: 1.5em;
 
   strong {
     color: #539bf5;
@@ -10,6 +10,7 @@ const ListItemWrapper = styled.div`
 
   p {
     color: #999999;
+    margin: 1.5em 0;
   }
 `;
 
