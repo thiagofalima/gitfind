@@ -59,19 +59,35 @@ const Wrapper = styled.div`
 
   .repositories h3 {
     font-size: 2em;
-    color: #FFFFFF;
-    margin: .75em 0;
+    color: #ffffff;
+    margin: 0.75em 0;
     text-align: center;
   }
 `;
 
 function App() {
+  const [user, setUser] = useState("");
+  const [currentUser, setCurrentUser] = useState(null);
+  const [repos, setRepos] = useState(null);
 
-  const [user, setUser] = useState("")
-  const [currentUser, setCurrentUser] = useState(null)
-  const [repos, setRepos] = useState(null)
+  const handleGetData = async () => {
+    const userData = await fetch(`https://api.github.com/users/${user}`);
+    const newUser = await userData.json();
 
-  
+    if (newUser.name) {
+      const { avatar_url, name, bio } = newUser;
+      setCurrentUser({ avatar_url, name, bio });
+
+      const reposData = await fetch(
+        `https://api.github.com/users/${user}/repos`,
+      );
+      const newRepos = await reposData.json();
+
+      if (newRepos.length) {
+        setRepos(newRepos);
+      }
+    }
+  };
 
   return (
     <>
@@ -85,26 +101,35 @@ function App() {
         />
         <div className="informacoes">
           <div>
-            <Input type="text" placeholder="@usuario" 
-            onChange={e => setUser(e.target.value)}/>
-            <Button>Buscar</Button>
-          </div>
-          <div className="profile">
-            <img
-              src="https://avatars.githubusercontent.com/u/137067860?v=4"
-              className="profile__image"
-              alt="foto de perfil do Thiago"
+            <Input
+              type="text"
+              placeholder="@usuario"
+              onChange={(e) => setUser(e.target.value)}
             />
-            <div>
-              <h3 className="profile__name">Thiago Lima</h3>
-              <span className="profile__username">@thiagofalima</span>
-              <p className="profile__description">Desenvolvedor Full Stack</p>
-            </div>
+            <Button onClick={handleGetData}>Buscar</Button>
           </div>
-          <hr />
+          {currentUser?.name ? (
+            <>
+              <div className="profile">
+                <img
+                  src="https://avatars.githubusercontent.com/u/137067860?v=4"
+                  className="profile__image"
+                  alt="foto de perfil do Thiago"
+                />
+                <div>
+                  <h3 className="profile__name">Thiago Lima</h3>
+                  <span className="profile__username">@thiagofalima</span>
+                  <p className="profile__description">
+                    Desenvolvedor Full Stack
+                  </p>
+                </div>
+              </div>
+              <hr />
+            </>
+          ) : null}
           <div className="repositories">
             <h3>Repositórios</h3>
-            <ListItem title="Teste 1" description="Teste descrição"/>
+            <ListItem title="Teste 1" description="Teste descrição" />
           </div>
         </div>
       </Wrapper>
